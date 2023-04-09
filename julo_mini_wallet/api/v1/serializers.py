@@ -151,3 +151,8 @@ class WalletWithdrawSerializer(serializers.ModelSerializer):
             instance = super().create(validated_data)
 
         return instance
+
+    def to_representation(self, instance):
+        ret = super().to_representation(instance)
+        ret['amount'] = str(instance.abs_amount)
+        return ret

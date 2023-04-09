@@ -68,6 +68,7 @@ class Transaction(models.Model):
     amount = models.DecimalField(max_digits=15, decimal_places=0)
     reference_id = models.UUIDField(unique=True)
 
+    @property
     def abs_amount(self):
         if self.amount < 0:
             return self.amount * -1
