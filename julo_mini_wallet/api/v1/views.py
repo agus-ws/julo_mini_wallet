@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User
 
-from rest_framework import generics, status
+from rest_framework import generics, status, mixins
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
@@ -79,7 +79,6 @@ class WalletInit(ResponseMixin, generics.CreateAPIView):
     permission_classes = [AllowAny]
 
 
-from rest_framework import mixins
 class WalletUpdate(ResponseMixin, mixins.CreateModelMixin, generics.RetrieveAPIView, generics.UpdateAPIView, generics.GenericAPIView):
     schema = WalletAutoSchema(
         tags=['Wallet'],

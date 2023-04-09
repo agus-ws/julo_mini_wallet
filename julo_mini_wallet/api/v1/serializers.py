@@ -116,7 +116,7 @@ class WalletDepositSerializer(serializers.ModelSerializer):
             wallet = Wallet.objects.select_for_update().filter(owned_by=self.context['request'].user).get()
             instance = super().create(validated_data)
 
-        return super().create(validated_data)
+        return instance
 
 
 class WalletWithdrawSerializer(serializers.ModelSerializer):
