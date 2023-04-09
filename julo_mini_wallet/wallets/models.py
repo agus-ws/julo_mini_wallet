@@ -73,35 +73,3 @@ class Transaction(models.Model):
             return self.amount * -1
 
         return self.amount
-
-
-# class Deposit(models.Model):
-#     wallet = models.ForeignKey(Wallet, related_name='deposits', on_delete=models.PROTECT)
-#     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-#     deposited_by = models.ForeignKey(User, on_delete=models.PROTECT)
-
-#     class STATUS(models.TextChoices):
-#         SUCCESS = 'success', _('success')
-#         FAILED = 'failed', _('failed')
-
-#     status = models.CharField(choices=STATUS.choices, max_length=7, default=STATUS.SUCCESS)
-
-#     deposited_at = models.DateTimeField(auto_now_add=True)
-#     amount = models.DecimalField(max_digits=15, decimal_places=0)
-#     reference_id = models.UUIDField()
-
-
-# class Withdrawal(models.Model):
-#     wallet = models.ForeignKey(Wallet, related_name='withdrawals', on_delete=models.PROTECT)
-#     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-#     withdrawn_by = models.ForeignKey(User, on_delete=models.PROTECT)
-
-#     class STATUS(models.TextChoices):
-#         SUCCESS = 'success', _('success')
-#         FAILED = 'failed', _('failed')
-
-#     status = models.CharField(choices=STATUS.choices, max_length=7, default=STATUS.SUCCESS)
-
-#     withdrawn_at = models.DateTimeField(auto_now_add=True)
-#     amount = models.DecimalField(max_digits=15, decimal_places=0)
-#     reference_id = models.UUIDField()
