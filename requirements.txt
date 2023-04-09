@@ -1,0 +1,5 @@
+pytz==2022.7.1  # https://github.com/stub42/pytz
+django==4.0.8  # https://www.djangoproject.com/
+psycopg2==2.9.5  # https://github.com/psycopg/psycopg2
+django-environ==0.9.0  # https://github.com/joke2k/django-environ
+djangorestframework==3.14.0  # https://github.com/encode/django-rest-framework
